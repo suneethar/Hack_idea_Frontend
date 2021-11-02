@@ -1,0 +1,28 @@
+.hc__card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    flex-wrap: wrap;
+    flex: 1;
+
+    &__tags {
+        display: flex;
+        column-gap: .3rem;
+        row-gap: .3rem;
+        flex-wrap: wrap;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    /* style to make card actions always at the bottom of card */
+    &__actions {
+        justify-content: flex-end;
+        align-items: flex-end !important; 
+        flex-grow: 1;
+    }
+
+    /* z-index is added to prevent badge showing on top of modal */
+    &__badge {
+        z-index: 0;
+    }
+}

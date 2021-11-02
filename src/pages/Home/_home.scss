@@ -1,0 +1,19 @@
+.hc__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    padding: 2rem;
+
+    &__items {
+        display: flex;
+        column-gap: 1rem;
+        row-gap: 1rem;  
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    &__actions {
+        display: flex;
+        column-gap: 1rem;
+    }
+}

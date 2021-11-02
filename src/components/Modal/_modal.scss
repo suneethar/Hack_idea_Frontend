@@ -1,0 +1,27 @@
+.hackidea__modal {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__content {
+        display: flex;
+        width: 500px;
+        margin: 1.75rem auto;
+        background: #fff;
+        box-shadow: 0 10px 15px -3px #00000012, 0 4px 6px -2px #0000000d;
+        flex-direction: column;
+        pointer-events: auto;
+        border: 1px solid rgba(0,0,0,.2);
+        outline: 0;
+        padding: 1.5rem;
+    }
+}
+
+
+
