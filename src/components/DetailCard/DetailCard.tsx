@@ -16,7 +16,7 @@ const DetailCard = ({data, updateVoteCount}: any) => {
 
     return (
         <Card sx={{ minWidth: 250, width: 300, maxWidth: 380}} className="hc__card">
-            <CardContent>
+            <CardContent className="hc__card__content">
                 <Typography variant="h6" component="div">
                     {title}
                 </Typography>
@@ -26,11 +26,11 @@ const DetailCard = ({data, updateVoteCount}: any) => {
                 </Typography>
 
                 <Typography variant="body1">
-                    <p>{description}</p>
+                    {description}
                 </Typography>
 
                 <ul className="hc__card__tags">
-                    {tags.map((tag: string) => {
+                    {tags && tags.map((tag: string) => {
                         return <li key={tag}><Chip label={tag} /></li>
                     })
                     }
@@ -39,9 +39,9 @@ const DetailCard = ({data, updateVoteCount}: any) => {
             </CardContent>
 
             <CardActions className="hc__card__actions">
-                <IconButton aria-label="share">
+                <IconButton aria-label="share" onClick={() => updateVoteCount(id, voteCount)}>
                 <Badge badgeContent={voteCount} color="primary" className="hc__card__badge">
-                    <ThumbUpAltIcon color="action" onClick={() => updateVoteCount(id, voteCount)} />
+                    <ThumbUpAltIcon color="action" />
                 </Badge>
                 </IconButton>
 

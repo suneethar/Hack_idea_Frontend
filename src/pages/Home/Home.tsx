@@ -64,7 +64,7 @@ const Home: React.FC<{}> = () => {
 
     return (
         <>
-            <Header user={user} />
+            <Header />
 
             <main className="hc__container">
                 <div className="hc__container__actions">
@@ -76,11 +76,11 @@ const Home: React.FC<{}> = () => {
                     />
                 </div>
 
-                <div className="hc__container__items">
+                <div className="hc__container__items" data-testid="ideasList">
                     { loading && <CircularProgress /> }
                     { !loading && ideaList.length === 0 ? <div>No Ideas found</div> :
                         ideaList.map((idea: Idea) => {
-                            return <DetailCard data={idea} 
+                            return <DetailCard data={idea} key={idea.id}
                                     updateVoteCount={(id:number, count:number) => updateVoteCount(id, count)} />
                         })
                     }

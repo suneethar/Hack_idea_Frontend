@@ -5,6 +5,11 @@
     flex-wrap: wrap;
     flex: 1;
 
+    &__content {
+        width: 100%;
+        word-break: break-all;
+    }
+
     &__tags {
         display: flex;
         column-gap: .3rem;

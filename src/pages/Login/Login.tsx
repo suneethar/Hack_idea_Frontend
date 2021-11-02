@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { fetchAPI } from "../../utils/helper";
+import { fetchAPI, updateLocalStorageAuth } from "../../utils/helper";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import './_login.scss';
@@ -18,9 +18,7 @@ const Login: React.FC<{}> = () => {
 
     const callbackHandler = (response: any) => {
         if (response && response.status == 'Success') {
-            localStorage.setItem("isAuthenticated", "true");
-            // Storing userdetails in localstorage
-            localStorage.setItem('user', JSON.stringify(response.data));
+            updateLocalStorageAuth("true", response.data);
             history.push("/home");
 
         } else {
@@ -65,7 +63,7 @@ const Login: React.FC<{}> = () => {
                 </Typography>
                 {error && <Alert severity="error">Please ener valid Employee Id</Alert>}
                 <form className="hc__login__formcontrol">
-                    <TextField
+                    <TextField data-testid="employeeId"
                         label="Employee Id" 
                         variant="outlined" 
                         value={employeeId} 

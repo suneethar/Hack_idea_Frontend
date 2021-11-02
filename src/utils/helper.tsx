@@ -1,6 +1,4 @@
-let userDetails = {};
-
-const fetchAPI = (endpoint:string, method:string, payload:object, callback:Function) => {
+export const fetchAPI = (endpoint:string, method:string, payload:object, callback:Function) => {
     const headers =  { 'Content-Type': 'application/json' };
     const body = JSON.stringify(payload);
 
@@ -23,4 +21,7 @@ const fetchAPI = (endpoint:string, method:string, payload:object, callback:Funct
     });
 }
 
-export { fetchAPI };
+export const updateLocalStorageAuth = (authValue: string, userDetails: any) => {
+    localStorage.setItem("isAuthenticated", authValue);
+    localStorage.setItem('user', JSON.stringify(userDetails));
+}

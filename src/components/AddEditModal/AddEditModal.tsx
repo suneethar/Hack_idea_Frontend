@@ -37,7 +37,7 @@ const AddEditModal = ({show, handleClose, addIdea, content}: any) => {
             </Typography>
 
             <form className="hc__modal__form">
-                <TextField 
+                <TextField
                     required 
                     label="Title"
                     value={title} 
@@ -63,7 +63,7 @@ const AddEditModal = ({show, handleClose, addIdea, content}: any) => {
                 <Button variant="contained" onClick={() => handleClose()}>Close</Button>
                 <Button 
                     variant="contained" 
-                    onClick={() => createIdea()} disabled={!title || !description || selectedTags.length === 0}>
+                    onClick={() => createIdea()} disabled={!title || !description }>
                     Create
                 </Button>
             </div>

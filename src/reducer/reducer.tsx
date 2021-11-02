@@ -16,7 +16,12 @@ const mainReducer = (state: MainState, action: Action) => {
             newIdea.voteCount = 0;
             newIdea.employeeId = employeeId;
             newIdea.id = uniqueId;
-            return { ...state, ideaList: [...state.ideaList, newIdea], loading: false, showModal: false };
+            return { ...state, 
+                    ideaList: [...state.ideaList, newIdea], 
+                    loading: false, 
+                    showModal: false, 
+                    sortByValue: 'none' 
+                };
 
         case ActionTypes.IncrementCount: 
             let { id, count } = action.payload;
@@ -27,7 +32,8 @@ const mainReducer = (state: MainState, action: Action) => {
 
         case ActionTypes.Sort:
             const data = getSortedData(state.ideaList, action.payload);
-            return { ...state, ideaList: data };
+            console.log(data)
+            return { ...state, ideaList: data, sortByValue: action.payload };
 
         case ActionTypes.ToggleModal:
             return { ...state, showModal: action.payload };
