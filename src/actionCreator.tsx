@@ -22,6 +22,13 @@ export const addData = (payload: any) => {
     }
 }
 
+export const deleteData = (payload: number) => {
+    return {
+        type: ActionTypes.DeleteData,
+        payload: payload
+    }
+}
+
 export const sortData = (payload: any) => {
     return {
         type: ActionTypes.Sort,

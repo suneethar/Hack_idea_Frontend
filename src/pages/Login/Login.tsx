@@ -54,7 +54,7 @@ const Login: React.FC<{}> = () => {
             <div className="hc__login__content">
                 <div className="hc__login__header">
                     <Typography variant="h5" component="h2">
-                        Hack Idea
+                        Hack Idea Logo
                     </Typography>
                     
                 </div>

@@ -7,7 +7,7 @@ describe('Test Login page', () => {
     });
 
     it('renders header element', () => {
-        const headerElmement = screen.getByText(/Hack Idea/i);
+        const headerElmement = screen.getByText(/Hack Idea Logo/i);
         expect(headerElmement).toBeInTheDocument();
     });
 

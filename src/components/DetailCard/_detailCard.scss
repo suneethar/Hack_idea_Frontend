@@ -5,6 +5,10 @@
     flex-wrap: wrap;
     flex: 1;
 
+    &__delete:disabled {
+        opacity: .5;
+    }
+
     &__content {
         width: 100%;
         word-break: break-all;
@@ -24,6 +28,7 @@
         justify-content: flex-end;
         align-items: flex-end !important; 
         flex-grow: 1;
+
     }
 
     /* z-index is added to prevent badge showing on top of modal */

@@ -25,3 +25,7 @@ export const updateLocalStorageAuth = (authValue: string, userDetails: any) => {
     localStorage.setItem("isAuthenticated", authValue);
     localStorage.setItem('user', JSON.stringify(userDetails));
 }
+
+export const getUserDetails = () => {
+    return JSON.parse(localStorage.getItem('user') || '{}');
+}

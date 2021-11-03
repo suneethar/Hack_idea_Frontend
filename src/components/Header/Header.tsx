@@ -15,10 +15,10 @@ const Header: React.FC<{}> = () => {
     }
     
     return (
-        <AppBar position="static">
+        <AppBar position="static" data-testid="appbar">
             <Toolbar>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    Hack Idea App
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} className="hc__title">
+                    Hack Idea Logo
                 </Typography>
 
                 <Button color="inherit" onClick={() => handleLogout()}>Logout</Button>

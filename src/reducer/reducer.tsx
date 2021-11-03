@@ -16,12 +16,12 @@ const mainReducer = (state: MainState, action: Action) => {
             newIdea.voteCount = 0;
             newIdea.employeeId = employeeId;
             newIdea.id = uniqueId;
-            return { ...state, 
-                    ideaList: [...state.ideaList, newIdea], 
-                    loading: false, 
-                    showModal: false, 
-                    sortByValue: 'none' 
-                };
+            return { ...state, ideaList: [...state.ideaList, newIdea], loading: false, showModal: false, sortByValue: 'none' 
+            };
+
+        case ActionTypes.DeleteData: 
+            let listAfterDelete = state.ideaList.filter((idea) => idea.id !== action.payload);
+            return { ...state, ideaList: listAfterDelete };
 
         case ActionTypes.IncrementCount: 
             let { id, count } = action.payload;

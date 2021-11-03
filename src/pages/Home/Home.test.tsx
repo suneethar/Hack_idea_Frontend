@@ -7,7 +7,7 @@ describe('Test Home page', () => {
     });
 
     it('renders header element', () => {
-        const headerElmement = screen.getByText(/Hack Idea App/i);
+        const headerElmement = screen.getByText(/Hack Idea Logo/i);
         expect(headerElmement).toBeInTheDocument();
     });
 

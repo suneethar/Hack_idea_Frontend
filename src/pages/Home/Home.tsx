@@ -5,11 +5,11 @@ import AddEditModal from "../../components/AddEditModal/AddEditModal";
 import DetailCard from "../../components/DetailCard";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import Header from "../../components/Header";
-import { fetchAPI } from "../../utils/helper";
+import { fetchAPI, getUserDetails } from "../../utils/helper";
 import './_home.scss';
 import {Ideas} from '../../fakeData/dummyIdeasData';
 import mainReducer from "../../reducer/reducer";
-import { setLoading, setData, addData, sortData, toggleModal, increamentCount } from "../../actionCreator";
+import { setLoading, setData, addData, sortData, toggleModal, increamentCount, deleteData } from "../../actionCreator";
 import { Idea } from "../../types";
 
 const IDEAS = Ideas;
@@ -23,7 +23,9 @@ const initialState = {
 
 const Home: React.FC<{}> = () => {
     // Get userdetails stored in localstorage
-    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const user = getUserDetails();
+    console.log('user...', user);
+
     const [{showModal, loading, ideaList, sortByValue}, dispatch] = useReducer(mainReducer, initialState);
     const ddMenuItems = [
         { label: 'None', id: 'none', value: 'none' },
@@ -81,7 +83,8 @@ const Home: React.FC<{}> = () => {
                     { !loading && ideaList.length === 0 ? <div>No Ideas found</div> :
                         ideaList.map((idea: Idea) => {
                             return <DetailCard data={idea} key={idea.id}
-                                    updateVoteCount={(id:number, count:number) => updateVoteCount(id, count)} />
+                                    updateVoteCount={(id:number, count:number) => updateVoteCount(id, count)} 
+                                    deleteIdea={(id: number) => dispatch(deleteData(id))} />
                         })
                     }
                 </div>

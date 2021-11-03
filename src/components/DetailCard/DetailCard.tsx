@@ -9,10 +9,13 @@ import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import Badge from '@mui/material/Badge';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { getUserDetails } from '../../utils/helper';
 
-const DetailCard = ({data, updateVoteCount}: any) => {
-    const {title, description, voteCount, tags, createdAt, id} = data;
+const DetailCard = ({data, updateVoteCount, deleteIdea}: any) => {
+    const {title, description, voteCount, tags, createdAt, employeeId, id} = data;
     const date = new Date(createdAt).toDateString();
+    const user = getUserDetails();
+    console.log(user, employeeId)
 
     return (
         <Card sx={{ minWidth: 250, width: 300, maxWidth: 380}} className="hc__card">
@@ -45,13 +48,15 @@ const DetailCard = ({data, updateVoteCount}: any) => {
                 </Badge>
                 </IconButton>
 
-                <IconButton aria-label="share">
+                {/* <IconButton aria-label="edit">
                     <EditIcon color="action" />
-                </IconButton>
-
-                <IconButton aria-label="share">
+                </IconButton> */}
+                <IconButton aria-label="delete" className="hc__card__delete"
+                    onClick={() => deleteIdea(id)} 
+                    disabled={user.employeeId !== employeeId}>
                     <DeleteIcon color="action" />
                 </IconButton>
+                
             </CardActions>
         </Card>
     )

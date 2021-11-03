@@ -21,7 +21,8 @@ export enum ActionTypes {
     Sort = 'SORT',
     ToggleModal = 'TOGGLEMODAL',
     AddData = 'ADDDATA',
-    IncrementCount = 'IncrementCount'
+    IncrementCount = 'IncrementCount',
+    DeleteData = 'DeleteData'
 }
 
 export type Action = {

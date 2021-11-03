@@ -41,6 +41,7 @@ const AddEditModal = ({show, handleClose, addIdea, content}: any) => {
                     required 
                     label="Title"
                     value={title} 
+                    inputProps={{ maxLength: 40 }}
                     onChange={(e) => setTitle(e.target.value)} 
                 />
                 <TextField
