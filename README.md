@@ -25,7 +25,8 @@ Once you enter the data, click on create button to create idea.
 Note: Ideas are not persisitant, it will be reset on page refresh.
 Test cases are written for Login page and Home page and for component only one test case are added.
 
-## Bakend Integration
+## API with ExpressJS and MongoDB
 You can checkout the backend and use the API, (MongoDB local/Cloud set up is needed):
+https://github.com/suneethar/Hack_idea_Backend.git
 
 
