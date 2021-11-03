@@ -7,7 +7,7 @@ import React from 'react';
 import './_detailCard.scss';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import Badge from '@mui/material/Badge';
-import EditIcon from '@mui/icons-material/Edit';
+// import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { getUserDetails } from '../../utils/helper';
 
