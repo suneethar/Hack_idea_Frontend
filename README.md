@@ -1,8 +1,8 @@
 # Getting Started with Hack Idea App
 
-git clone https://github.com/suneethar/Hack_idea_Frontend.git
-npm i
-npm run start
+* Checkout the repository or download and unzip the file.
+* npm i
+* npm run start
 
 ### Run test cases
 ###### (Login page and Home page have all test covered, components basic test cases)
