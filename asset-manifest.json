@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/hackIdea/static/css/main.c550b174.chunk.css",
+    "main.js": "/hackIdea/static/js/main.558d8f17.chunk.js",
+    "main.js.map": "/hackIdea/static/js/main.558d8f17.chunk.js.map",
+    "runtime-main.js": "/hackIdea/static/js/runtime-main.909dbbca.js",
+    "runtime-main.js.map": "/hackIdea/static/js/runtime-main.909dbbca.js.map",
+    "static/js/2.abf37ca7.chunk.js": "/hackIdea/static/js/2.abf37ca7.chunk.js",
+    "static/js/2.abf37ca7.chunk.js.map": "/hackIdea/static/js/2.abf37ca7.chunk.js.map",
+    "static/js/3.58b21a6c.chunk.js": "/hackIdea/static/js/3.58b21a6c.chunk.js",
+    "static/js/3.58b21a6c.chunk.js.map": "/hackIdea/static/js/3.58b21a6c.chunk.js.map",
+    "index.html": "/hackIdea/index.html",
+    "static/css/main.c550b174.chunk.css.map": "/hackIdea/static/css/main.c550b174.chunk.css.map",
+    "static/js/2.abf37ca7.chunk.js.LICENSE.txt": "/hackIdea/static/js/2.abf37ca7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.909dbbca.js",
+    "static/js/2.abf37ca7.chunk.js",
+    "static/css/main.c550b174.chunk.css",
+    "static/js/main.558d8f17.chunk.js"
+  ]
+}
