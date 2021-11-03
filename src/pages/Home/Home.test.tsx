@@ -60,6 +60,7 @@ describe('Test Home page', () => {
         const ideas = ideasContainer.querySelectorAll('.hc__card');
         let countElm = ideas[0].querySelector('.MuiBadge-badge') as any;
         expect(countElm.innerHTML).toEqual('3');
+        
         const voteCountBtn = ideas[0].querySelector('.hc__card__badge') as any;
         fireEvent.click(voteCountBtn);
         countElm = ideas[0].querySelector('.MuiBadge-badge') as any;

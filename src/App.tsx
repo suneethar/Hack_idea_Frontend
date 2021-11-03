@@ -6,10 +6,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProtectedRoute from './components/Common/ProtectedRoutes';
 
 function App() {
-  const updateLoginStatus = (status: boolean) => {
-    console.log(status)
-  }
-
   return (
     <div className="App">
       <Router>

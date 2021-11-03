@@ -11,6 +11,7 @@ import {Ideas} from '../../fakeData/dummyIdeasData';
 import mainReducer from "../../reducer/reducer";
 import { setLoading, setData, addData, sortData, toggleModal, increamentCount, deleteData } from "../../actionCreator";
 import { Idea } from "../../types";
+import Typography from "@mui/material/Typography";
 
 const IDEAS = Ideas;
 
@@ -24,7 +25,6 @@ const initialState = {
 const Home: React.FC<{}> = () => {
     // Get userdetails stored in localstorage
     const user = getUserDetails();
-    console.log('user...', user);
 
     const [{showModal, loading, ideaList, sortByValue}, dispatch] = useReducer(mainReducer, initialState);
     const ddMenuItems = [
@@ -80,7 +80,10 @@ const Home: React.FC<{}> = () => {
 
                 <div className="hc__container__items" data-testid="ideasList">
                     { loading && <CircularProgress /> }
-                    { !loading && ideaList.length === 0 ? <div>No Ideas found</div> :
+                    { !loading && ideaList.length === 0 ? 
+                        <Typography variant="h5" component="h5">
+                            No Ideas found
+                        </Typography>:
                         ideaList.map((idea: Idea) => {
                             return <DetailCard data={idea} key={idea.id}
                                     updateVoteCount={(id:number, count:number) => updateVoteCount(id, count)} 

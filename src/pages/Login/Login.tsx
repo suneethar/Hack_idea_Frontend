@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { fetchAPI, updateLocalStorageAuth } from "../../utils/helper";
+import { updateLocalStorageAuth } from "../../utils/helper";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import './_login.scss';
@@ -44,6 +44,13 @@ const Login: React.FC<{}> = () => {
         }
     }
 
+    const keyPressHandler = (event: any) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            submitHandler(event);
+        }
+    }
+
     const updateEmployeeId = (value: any) => {
         setError(false);
         setEmployeeId(value);
@@ -61,12 +68,14 @@ const Login: React.FC<{}> = () => {
                 <Typography variant="h6" component="h3">
                     Login with Employee Id
                 </Typography>
+                
                 {error && <Alert severity="error">Please ener valid Employee Id</Alert>}
-                <form className="hc__login__formcontrol">
+                <form className="hc__login__formcontrol" onSubmit={(e) => e.preventDefault()}>
                     <TextField data-testid="employeeId"
                         label="Employee Id" 
                         variant="outlined" 
-                        value={employeeId} 
+                        value={employeeId}
+                        onKeyUp={(e) => keyPressHandler(e)} 
                         onChange={(e:any) => updateEmployeeId(e.target.value)}
                     />
                     <Button 

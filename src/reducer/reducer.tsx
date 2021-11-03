@@ -32,7 +32,6 @@ const mainReducer = (state: MainState, action: Action) => {
 
         case ActionTypes.Sort:
             const data = getSortedData(state.ideaList, action.payload);
-            console.log(data)
             return { ...state, ideaList: data, sortByValue: action.payload };
 
         case ActionTypes.ToggleModal:

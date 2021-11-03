@@ -15,10 +15,9 @@ const DetailCard = ({data, updateVoteCount, deleteIdea}: any) => {
     const {title, description, voteCount, tags, createdAt, employeeId, id} = data;
     const date = new Date(createdAt).toDateString();
     const user = getUserDetails();
-    console.log(user, employeeId)
 
     return (
-        <Card sx={{ minWidth: 250, width: 300, maxWidth: 380}} className="hc__card">
+        <Card sx={{ minWidth: 280, width: 280, maxWidth: 380}} className="hc__card">
             <CardContent className="hc__card__content">
                 <Typography variant="h6" component="div">
                     {title}
